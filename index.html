@@ -23,18 +23,18 @@
                 <div class="separador">
                     <div class="label_input">
                             <label for="">Nombre: </label>
-                            <input type="text"  placeholder="nombre">
+                            <input type="text"  placeholder="nombre" id="nombre">
                     </div>
 
                     <div class="label_input">
                             <label for="">Salario base: </label>
-                            <input type="number"  placeholder="Salario">
+                            <input type="number"  placeholder="Salario" id="salario">
                     </div>
                 </div>
                 <div class="separador">
                     <div class="label_input">
                             <p>Fecha de inicio</p>
-                            <input type="date" min="2021-01-01">
+                            <input type="date" min="2021-01-01" id="dateInput">
                     </div>
                     <div class="label_input" min="2018-01-01">
                             <p>Fecha de retiro</p>
@@ -51,7 +51,7 @@
                     </div>    
               </div>
               <div class="div_buttom">
-                  <button>Calcular</button>
+                  <button onclick="calcular() ">Calcular</button>
               </div>
 
             </div>  
@@ -62,8 +62,8 @@
                 <p class="parrafo">Liquidacion</p>
 
                 <div class="Contenedor_resultado">
-                <div class="Resultado">SANTIAGO</div>
-                <div class="Resultado">SANTIAGO</div>
+                <div id="resultado" class="Resultado">SANTIAGO</div>
+                <div id="resultado2" class="Resultado">SANTIAGO</div>
 
                </div>
 
@@ -75,4 +75,5 @@
 
     </footer>
 </body>
+<script src="./js/functions.js"></script>
 </html>
