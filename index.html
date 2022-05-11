@@ -32,10 +32,10 @@
                     </div>
                 </div>
                 <div class="separador">
-                    <div class="label_input">
+                    <form class="label_input" id="myForm">
                             <p>Fecha de inicio</p>
-                            <input type="date" min="2021-01-01" id="dateInput">
-                    </div>
+                            <input type="date" min="2021-01-01" id="date" ;">
+                    </form>
                     <div class="label_input" min="2018-01-01">
                             <p>Fecha de retiro</p>
                             <input type="date">
@@ -51,7 +51,7 @@
                     </div>    
               </div>
               <div class="div_buttom">
-                  <button onclick="calcular() ">Calcular</button>
+                  <button type="submit" onclick="calcular() ">Calcular</button>
               </div>
 
             </div>  
@@ -64,6 +64,7 @@
                 <div class="Contenedor_resultado">
                 <div id="resultado" class="Resultado">SANTIAGO</div>
                 <div id="resultado2" class="Resultado">SANTIAGO</div>
+                <div id="result">sant</div>
 
                </div>
 

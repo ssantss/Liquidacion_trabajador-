@@ -1,13 +1,14 @@
-const input = document.getElementById("nombre");
-const mombre = input.value;
+/* const input = document.getElementById("nombre");
+const mombre = input.value; */
 
-const input_salario = document.getElementById("salario");
-const salario = parseInt(input_salario.value);
+/* const input_salario = document.getElementById("salario");
+const salario = parseInt(input_salario.value); */
 
 const dias_trabajados = 350;
 
 const cesantias = (salario * dias_trabajados)/360
 const intereses_cesantias = (cesantias * dias_trabajados * 0.12)/360
+
 
 
 function calcular(){
@@ -17,8 +18,6 @@ function calcular(){
     const input_salario = document.getElementById("salario");
     const salario = parseInt(input_salario.value);
 
-    const date = document.getElementById("dateInput");
-    console.log(date)
 
 
 
