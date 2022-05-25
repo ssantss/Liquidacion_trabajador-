@@ -119,6 +119,8 @@
 }
 
 .div_buttom button {
+    display: flex;
+    justify-content: center;
     font-family: 'Nunito', sans-serif;
     font-size: 25px;
     color: #fdffff;
