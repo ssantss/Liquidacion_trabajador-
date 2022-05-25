@@ -30,6 +30,7 @@
     width: auto;
     margin: 0;
     align-items: flex-start;
+    
 
 }
 
@@ -49,7 +50,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
-    min-height: 300px;
+    min-height: 250px;
   }
 .div_logo{
     display: flex;
@@ -99,69 +100,61 @@
 .parrafo {
     font-family: 'Nunito', sans-serif;
     font-size: 25px;
+    color: #fdffff;
+    background-color: black;
+    padding: 5px;
+    margin-bottom: 25px;
+    border-radius: 3px;
+
 }
 
 .Resultado{
     font-family: 'Nunito', sans-serif;
     font-size: 25px;
+    text-align: center;
 }
 .Contenedor_resultado {
     display: flex;
     flex-direction: column;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:root {
-    --color-green: #00a878;
-    --color-red: #fe5e41;
-    --color-button: #fdffff;
-    --color-black: #000;
+.div_buttom button {
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    color: #fdffff;
+    background-color: #c0392b;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    width: 220px;
+    height: 40px;
+    margin-top: 25px;
+    
 }
-.switch-button {
-    display: inline-block;
+
+.div_buttom button:hover {
+    background-color: black;
 }
-.switch-button .switch-button__checkbox {
-    display: none;
+
+.div_buttom button:active {
+    background-color: black;
+    transform: translateY(4px);
 }
-.switch-button .switch-button__label {
-    background-color: var(--color-red);
-    width: 5rem;
-    height: 3rem;
-    border-radius: 3rem;
-    display: inline-block;
-    position: relative;
-}
-.switch-button .switch-button__label:before {
-    transition: .2s;
-    display: block;
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    background-color: var(--color-button);
-    content: '';
-    border-radius: 50%;
-    box-shadow: inset 0px 0px 0px 1px var(--color-black);
-}
-.switch-button .switch-button__checkbox:checked + .switch-button__label {
-    background-color: var(--color-green);
-}
-.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
-    transform: translateX(2rem);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

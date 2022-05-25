@@ -4,33 +4,53 @@ const mombre = input.value; */
 /* const input_salario = document.getElementById("salario");
 const salario = parseInt(input_salario.value); */
 
-const dias_trabajados = 350;
 
-const cesantias = (salario * dias_trabajados)/360
-const intereses_cesantias = (cesantias * dias_trabajados * 0.12)/360
 
+function submit_event (e) {
+    e.preventDefault()
+    console.log(e)
+    calcular()
+    
+}
+
+const form = document.getElementById('form')    
+form.addEventListener('submit',submit_event)
 
 
 function calcular(){
     const input = document.getElementById("nombre");
     const nombre = input.value;
-    console.log(nombre)
+    
     const input_salario = document.getElementById("salario");
     const salario = parseInt(input_salario.value);
+    const input_dias_laborados = document.getElementById("dias_laborados");
+    const dias_laborados = parseInt(input_dias_laborados.value);
 
 
 
 
 
 
-    const cesantias = Math.round((salario * dias_trabajados)/360);
-    const intereses_cesantias = Math.round((cesantias * dias_trabajados * 0.12)/360);
+    const cesantias = Math.round((salario * dias_laborados)/360);
+    const intereses_cesantias = Math.round((cesantias * dias_laborados * 0.12)/360);
+    const prima_de_servicios = Math.round((salario * dias_laborados)/360);
+    const vacaciones = Math.round((salario * dias_laborados)/720);
+    const total_liquidacion = cesantias + intereses_cesantias + prima_de_servicios + vacaciones;
 
-    Cesantias_resultado = "las cesantias son: " + cesantias  
+    Cesantias_resultado = "Cesantias: " + cesantias  
     document.getElementById('resultado').innerHTML = Cesantias_resultado;
-    Intereses_Cesantias_resultado = "los intereses son: " + intereses_cesantias
+
+    Intereses_Cesantias_resultado = "Intereses cesantias: " + intereses_cesantias
     document.getElementById('resultado2').innerHTML = Intereses_Cesantias_resultado;
 
+    prima_de_servicios_resultados = "Prima de servicio: " + prima_de_servicios;
+    document.getElementById('resultado3').innerHTML = prima_de_servicios_resultados;
+
+    vacaciones_resultados = "Vacaciones: " + vacaciones;
+    document.getElementById('resultado4').innerHTML = vacaciones_resultados;
+
+    total_liquidacion_resultado = "El total de la liquidación del trabajador " + nombre + " es igual a: " + total_liquidacion;
+    document.getElementById('resultado5').innerHTML = total_liquidacion_resultado;
 
 }
 

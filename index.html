@@ -20,51 +20,43 @@
 
         <div class="card">
             <div class="card-body">
-                <div class="separador">
-                    <div class="label_input">
-                            <label for="">Nombre: </label>
-                            <input type="text"  placeholder="nombre" id="nombre">
-                    </div>
+                <form  id="form">
+                    <div class="separador">
+                        <div class="label_input">
+                                <label for="">Nombre: </label>
+                                <input type="text"  placeholder="nombre" id="nombre">
+                        </div>
 
-                    <div class="label_input">
-                            <label for="">Salario base: </label>
-                            <input type="number"  placeholder="Salario" id="salario">
+                        <div class="label_input">
+                                <label for="">Salario base: </label>
+                                <input type="number"  placeholder="Salario" id="salario" min="0" required>
+                        </div>
                     </div>
-                </div>
-                <div class="separador">
-                    <form class="label_input" id="myForm">
-                            <p>Fecha de inicio</p>
-                            <input type="date" min="2021-01-01" id="date">
-                    </form>
-                    <div class="label_input" min="2018-01-01">
-                            <p>Fecha de retiro</p>
-                            <input type="date">
-                    </div>
-                </div>    
-               <div class="label_input">
-                    <label for="">Vacaciones</label>
-                    <div class="switch-button">
-                        <!-- Checkbox -->
-                        <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
-                        <!-- Botón -->
-                        <label for="switch-label" class="switch-button__label"></label>
+                    <div class="separador">
+                        <div class="label_input" id="myForm">
+                                <p>Dias laborados</p>
+                                <input type="number" name="dias_laborados" id="dias_laborados" placeholder="Dias laborados" min="0" required>
+                        </div>
                     </div>    
-              </div>
-              <div class="div_buttom">
-                  <button type="submit" onclick="calcular() ">Calcular</button>
-              </div>
 
+                    <div class="div_buttom">
+                        <button type="submit" >Calcular</button>
+                    </div>
+                </form>
             </div>  
         </div>
         
         <div class="card">
             <div class="card-body">
-                <p class="parrafo">Liquidacion</p>
+                <p class="parrafo">Resultado Liquidación</p>
 
                 <div class="Contenedor_resultado">
-                <div id="resultado" class="Resultado">SANTIAGO</div>
-                <div id="resultado2" class="Resultado">SANTIAGO</div>
-                <div id="result">sant</div>
+                <div id="resultado" class="Resultado"></div>
+                <div id="resultado2" class="Resultado"></div>
+                <div id="resultado3" class="Resultado"></div>
+                <div id="resultado4" class="Resultado"></div>
+                <div id="resultado5" class="Resultado"></div>
+                
 
                </div>
 
