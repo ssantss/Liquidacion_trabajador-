@@ -20,16 +20,8 @@ function submit_event (e) {
     e.preventDefault()
     const data = serialize_form(this);
     const resultados = calcular2(data.salario_base, data.dias_laborados)  
-    const pintar_ = pintar(resultados,data)
-    pintar_.pintar_cesantias
-    pintar_.pintar_intereses_cesantias
-    pintar_.pintar_prima_de_servicios
-    pintar_.pintar_vacaciones
-    pintar_.pintar_total_liquidacion
+    pintar(resultados,data)
 
-    
-    
-    
 }
 
 /* Se hacen todos los calculos de la liquidacion */
@@ -43,7 +35,7 @@ function calcular2 (salario,dias_laborados) {
     const intereses_cesantias = Math.round((cesantias * dias_laborados * 0.12)/360);
     const prima_de_servicios = Math.round((salario * dias_laborados)/360);
     const vacaciones = Math.round((salario * dias_laborados)/720);
-    const total_liquidacion = cesantias + intereses_cesantias + prima_de_servicios + vacaciones;
+    const total_liquidacion = cesantias + intereses_cesantias + prima_de_servicios ;
 
     /* Se crea un objeto con los resultado de los calculos */
     return {
@@ -67,14 +59,14 @@ function pintar(resultados, data){
     pintar_cesantias =  document.getElementById('resultado').innerHTML = Cesantias_resultado;
     pintar_intereses_cesantias = document.getElementById('resultado2').innerHTML = Intereses_Cesantias_resultado;
     pintar_prima_de_servicios = document.getElementById('resultado3').innerHTML = prima_de_servicios_resultados;
-    pintar_vacaciones = document.getElementById('resultado4').innerHTML = vacaciones_resultados;
-    pintar_total_liquidacion = document.getElementById('resultado5').innerHTML = total_liquidacion_resultado;
+/*     pintar_vacaciones = document.getElementById('resultado4').innerHTML = vacaciones_resultados;
+ */    pintar_total_liquidacion = document.getElementById('resultado5').innerHTML = total_liquidacion_resultado;
 
     return {
         pintar_cesantias: pintar_cesantias,
         pintar_intereses_cesantias: pintar_intereses_cesantias,
         pintar_prima_de_servicios: pintar_prima_de_servicios,
-        pintar_vacaciones: pintar_vacaciones,
+        /* pintar_vacaciones: pintar_vacaciones, */
         pintar_total_liquidacion: pintar_total_liquidacion,
     }
    
