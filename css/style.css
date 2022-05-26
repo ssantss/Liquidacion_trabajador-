@@ -105,6 +105,8 @@
     padding: 5px;
     margin-bottom: 25px;
     border-radius: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
 
 }
 
@@ -118,9 +120,13 @@
     flex-direction: column;
 }
 
-.div_buttom button {
+.div_buttom{
     display: flex;
     justify-content: center;
+}
+
+.div_buttom button {
+
     font-family: 'Nunito', sans-serif;
     font-size: 25px;
     color: #fdffff;
@@ -145,8 +151,9 @@
     transform: translateY(4px);
 }
 
-
-
+input:focus::placeholder {
+  color: transparent;
+}
 
 
 

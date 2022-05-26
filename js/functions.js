@@ -50,6 +50,7 @@ function calcular (salario,dias_laborados) {
         prima_de_servicios: prima_de_servicios,
         vacaciones: vacaciones,
         total_liquidacion: total_liquidacion,
+        dias_laborados : dias_laborados,
     }
 }
 
@@ -59,18 +60,18 @@ function pintar(resultados, data){
     prima_de_servicios_resultados = "Prima de servicio: " + resultados.prima_de_servicios;
     vacaciones_resultados = "Vacaciones: " + resultados.vacaciones;
     total_liquidacion_resultado = "El total de la liquidación del trabajador " + data.nombre + " es igual a: " + resultados.total_liquidacion;
-
+    total_dias_laborados = "Total dias laborados: " + resultados.dias_laborados;
     pintar_cesantias =  document.getElementById('resultado').innerHTML = Cesantias_resultado;
     pintar_intereses_cesantias = document.getElementById('resultado2').innerHTML = Intereses_Cesantias_resultado;
     pintar_prima_de_servicios = document.getElementById('resultado3').innerHTML = prima_de_servicios_resultados;
-/*     pintar_vacaciones = document.getElementById('resultado4').innerHTML = vacaciones_resultados;
- */    pintar_total_liquidacion = document.getElementById('resultado5').innerHTML = total_liquidacion_resultado;
+    pintar_dias_laborados = document.getElementById('resultado4').innerHTML = total_dias_laborados;
+    pintar_total_liquidacion = document.getElementById('resultado5').innerHTML = total_liquidacion_resultado;
 
     return {
         pintar_cesantias: pintar_cesantias,
         pintar_intereses_cesantias: pintar_intereses_cesantias,
         pintar_prima_de_servicios: pintar_prima_de_servicios,
-        /* pintar_vacaciones: pintar_vacaciones, */
+        pintar_vacaciones: pintar_dias_laborados,
         pintar_total_liquidacion: pintar_total_liquidacion,
     }
    
