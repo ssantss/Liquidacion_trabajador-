@@ -109,6 +109,9 @@
     padding-right: 15px;
 
 }
+.parrafo:hover {
+    cursor: default;
+}
 
 .Resultado{
     font-family: 'Nunito', sans-serif;
