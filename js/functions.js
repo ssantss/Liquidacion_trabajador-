@@ -1,4 +1,3 @@
-
 /* Se escucha el evento submit y se ejecuta el event */
 const form = document.getElementById('form')    
 form.addEventListener('submit',submit_event)
@@ -19,18 +18,25 @@ function serialize_form(form) {
 function submit_event (e) {
     e.preventDefault()
     const data = serialize_form(this);
-    const resultados = calcular2(data.salario_base, data.dias_laborados)  
-    pintar(resultados,data)
+    const dias_laborados = calcular_dias(data);
+    const resultados = calcular(data.salario_base, dias_laborados)  
+    pintar(resultados,data);
+}
 
+
+function calcular_dias (data) {
+    const date_start = data.fecha_inicial;
+    const date_end = data.fecha_final;
+    var start = moment(date_start, "YYYY-MM-DD");
+    var end = moment(date_end, "YYYY-MM-DD");
+    const dias = moment.duration(start.diff(end)).asDays();
+    return dias
 }
 
 /* Se hacen todos los calculos de la liquidacion */
-function calcular2 (salario,dias_laborados) {
-
-    
+function calcular (salario,dias_laborados) {
     salario = parseInt(salario);
     dias_laborados = parseInt(dias_laborados);
-    //
     const cesantias = Math.round((salario * dias_laborados)/360);
     const intereses_cesantias = Math.round((cesantias * dias_laborados * 0.12)/360);
     const prima_de_servicios = Math.round((salario * dias_laborados)/360);
@@ -45,8 +51,6 @@ function calcular2 (salario,dias_laborados) {
         vacaciones: vacaciones,
         total_liquidacion: total_liquidacion,
     }
-
-
 }
 
 function pintar(resultados, data){
