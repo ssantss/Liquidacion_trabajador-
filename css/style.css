@@ -47,10 +47,10 @@
 .card-body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 20px;
-    min-height: 250px;
+    min-height: 360px;
   }
 .div_logo{
     display: flex;
@@ -114,6 +114,10 @@
     font-family: 'Nunito', sans-serif;
     font-size: 25px;
     text-align: center;
+    width: 220px;
+    height: 40px;
+    font-size: 20px;
+
 }
 .Contenedor_resultado {
     display: flex;
@@ -156,7 +160,15 @@ input:focus::placeholder {
 }
 
 
-
+#resultado6 {
+    display: flex;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 30px;
+    color: #c0392b;
+}
 
 
 
