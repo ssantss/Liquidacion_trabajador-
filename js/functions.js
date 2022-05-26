@@ -1,36 +1,75 @@
-/* const input = document.getElementById("nombre");
-const mombre = input.value; */
+/* Se escucha el evento submit y se ejecuta el event */
+const form = document.getElementById('form')    
+form.addEventListener('submit',submit_event)
 
-/* const input_salario = document.getElementById("salario");
-const salario = parseInt(input_salario.value); */
+/* SE CREA LA VARIABLE DATA CON EL EVENTO SUBMIT Y SE CREA UN OBJETO QUE CONTIENE TODO */
+function serialize_form(form) {
+    /* Retorna los valores del form en un objeto */
+  
+    var data = new FormData(form);
+    let results = {};
+    for (const [name, value] of data) {
+      results[name] = value;
+    }
+    return results;
+  } 
 
-const dias_trabajados = 350;
-
-const cesantias = (salario * dias_trabajados)/360
-const intereses_cesantias = (cesantias * dias_trabajados * 0.12)/360
-
-
-
-function calcular(){
-    const input = document.getElementById("nombre");
-    const nombre = input.value;
-    console.log(nombre)
-    const input_salario = document.getElementById("salario");
-    const salario = parseInt(input_salario.value);
-
-
-
-
-
-
-    const cesantias = Math.round((salario * dias_trabajados)/360);
-    const intereses_cesantias = Math.round((cesantias * dias_trabajados * 0.12)/360);
-
-    Cesantias_resultado = "las cesantias son: " + cesantias  
-    document.getElementById('resultado').innerHTML = Cesantias_resultado;
-    Intereses_Cesantias_resultado = "los intereses son: " + intereses_cesantias
-    document.getElementById('resultado2').innerHTML = Intereses_Cesantias_resultado;
+/* Cuando hay un evento submit la funcion ejecuta todos los siguientes parametros  */
+function submit_event (e) {
+    e.preventDefault()
+    const data = serialize_form(this);
+    const dias_laborados = calcular_dias(data);
+    const resultados = calcular(data.salario_base, dias_laborados)  
+    pintar(resultados,data);
+}
 
 
+function calcular_dias (data) {
+    const date_start = data.fecha_inicial;
+    const date_end = data.fecha_final;
+    var start = moment(date_start, "YYYY-MM-DD");
+    var end = moment(date_end, "YYYY-MM-DD");
+    const dias = moment.duration(start.diff(end)).asDays();
+    return dias
+}
+
+/* Se hacen todos los calculos de la liquidacion */
+function calcular (salario,dias_laborados) {
+    salario = parseInt(salario);
+    dias_laborados = parseInt(dias_laborados);
+    const cesantias = Math.round((salario * dias_laborados)/360);
+    const intereses_cesantias = Math.round((cesantias * dias_laborados * 0.12)/360);
+    const prima_de_servicios = Math.round((salario * dias_laborados)/360);
+    const vacaciones = Math.round((salario * dias_laborados)/720);
+    const total_liquidacion = cesantias + intereses_cesantias + prima_de_servicios ;
+
+    /* Se crea un objeto con los resultado de los calculos */
+    return {
+        cesantias: cesantias,
+        intereses_cesantias: intereses_cesantias,
+        prima_de_servicios: prima_de_servicios,
+        vacaciones: vacaciones,
+        total_liquidacion: total_liquidacion,
+        dias_laborados : dias_laborados,
+    }
+}
+
+function pintar(resultados, data){
+    pintar_cesantias =  document.getElementById('resultado').innerHTML = resultados.cesantias;
+    pintar_intereses_cesantias = document.getElementById('resultado2').innerHTML = resultados.intereses_cesantias;
+    pintar_prima_de_servicios = document.getElementById('resultado3').innerHTML =  resultados.prima_de_servicios;
+    pintar_dias_laborados = document.getElementById('resultado4').innerHTML = resultados.dias_laborados;
+    pintar_total_liquidacion = document.getElementById('resultado5').innerHTML = resultados.total_liquidacion;
+    pintar_total_referencias = document.getElementById('resultado6').innerHTML = "La liquidación del trabajador " + data.nombre + " con un sueldo de: " + data.salario_base +
+    " que laboro: " + resultados.dias_laborados + " dias, es igual a: " + resultados.total_liquidacion;
+    return {
+        pintar_cesantias: pintar_cesantias,
+        pintar_intereses_cesantias: pintar_intereses_cesantias,
+        pintar_prima_de_servicios: pintar_prima_de_servicios,
+        pintar_vacaciones: pintar_dias_laborados,
+        pintar_total_liquidacion: pintar_total_liquidacion,
+        pintar_total_referencias: pintar_total_referencias,
+    }
+   
 }
 

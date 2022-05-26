@@ -20,53 +20,64 @@
 
         <div class="card">
             <div class="card-body">
-                <div class="separador">
-                    <div class="label_input">
-                            <label for="">Nombre: </label>
-                            <input type="text"  placeholder="nombre" id="nombre">
-                    </div>
+                <form  id="form">
+                    <div class="separador">
+                        <div class="label_input">
+                                <label for="">Nombre: </label>
+                                <input type="text" name="nombre" placeholder="nombre" id="nombre">
+                        </div>
 
-                    <div class="label_input">
-                            <label for="">Salario base: </label>
-                            <input type="number"  placeholder="Salario" id="salario">
+                        <div class="label_input">
+                                <label for="">Salario base: </label>
+                                <input type="number" name="salario_base"  placeholder="Salario" id="salario" min="0" required>
+                        </div>
                     </div>
-                </div>
-                <div class="separador">
-                    <form class="label_input" id="myForm">
-                            <p>Fecha de inicio</p>
-                            <input type="date" min="2021-01-01" id="date">
-                    </form>
-                    <div class="label_input" min="2018-01-01">
-                            <p>Fecha de retiro</p>
-                            <input type="date">
-                    </div>
-                </div>    
-               <div class="label_input">
-                    <label for="">Vacaciones</label>
-                    <div class="switch-button">
-                        <!-- Checkbox -->
-                        <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
-                        <!-- Botón -->
-                        <label for="switch-label" class="switch-button__label"></label>
+                    <div class="separador">
+                        <div class="label_input" id="myForm">
+                            <p>Fecha inicial</p>
+                            <input type="date" name="fecha_final" >
+                        </div>
+                        <div class="label_input">
+                            
+                            <p>Fecha final</p>
+                            <input type="date" name="fecha_inicial">
+                        </div>
                     </div>    
-              </div>
-              <div class="div_buttom">
-                  <button type="submit" onclick="calcular() ">Calcular</button>
-              </div>
 
+                    <div class="div_buttom">
+                        <button type="submit" >Calcular</button>
+                    </div>
+                </form>
             </div>  
         </div>
         
         <div class="card">
             <div class="card-body">
-                <p class="parrafo">Liquidacion</p>
+                <p class="parrafo">Resultado Liquidación</p>
 
                 <div class="Contenedor_resultado">
-                <div id="resultado" class="Resultado">SANTIAGO</div>
-                <div id="resultado2" class="Resultado">SANTIAGO</div>
-                <div id="result">sant</div>
-
-               </div>
+                    <div class="separador">
+                        <div class="Resultado">Dias laborados: </div> 
+                        <div id="resultado4" class="Resultado"></div>
+                     </div>
+                    <div class="separador">
+                        <div class="Resultado">Cesantias: </div> 
+                        <div id="resultado" class="Resultado"></div>
+                    </div>
+                    <div class="separador">
+                        <div class="Resultado">Intereses cesantias: </div> 
+                        <div id="resultado2" class="Resultado"></div>
+                    </div>
+                    <div class="separador">
+                        <div class="Resultado">Prima de servicio: </div> 
+                        <div id="resultado3" class="Resultado"></div>
+                    </div>
+                    <div class="separador">
+                        <div class="Resultado">Total Liquidación: </div> 
+                        <div id="resultado5" class="Resultado"></div>
+                    </div>
+                </div>
+                <div class="Resultado" id="resultado6"></div>
 
             </div>  
         </div>
@@ -76,5 +87,6 @@
 
     </footer>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
 <script src="./js/functions.js"></script>
 </html>
