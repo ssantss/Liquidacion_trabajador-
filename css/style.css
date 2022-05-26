@@ -122,6 +122,14 @@
     font-size: 20px;
 
 }
+.Resultado_{
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    text-align: end;
+    width: 220px;
+    height: 40px;
+    font-size: 20px;
+}
 .Contenedor_resultado {
     display: flex;
     flex-direction: column;

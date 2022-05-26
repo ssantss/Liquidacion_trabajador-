@@ -55,21 +55,13 @@ function calcular (salario,dias_laborados) {
 }
 
 function pintar(resultados, data){
-    pintar_cesantias =  document.getElementById('resultado').innerHTML = resultados.cesantias;
-    pintar_intereses_cesantias = document.getElementById('resultado2').innerHTML = resultados.intereses_cesantias;
-    pintar_prima_de_servicios = document.getElementById('resultado3').innerHTML =  resultados.prima_de_servicios;
-    pintar_dias_laborados = document.getElementById('resultado4').innerHTML = resultados.dias_laborados;
-    pintar_total_liquidacion = document.getElementById('resultado5').innerHTML = resultados.total_liquidacion;
-    pintar_total_referencias = document.getElementById('resultado6').innerHTML = "La liquidación del trabajador " + data.nombre + " con un sueldo de: " + data.salario_base +
-    " que laboro: " + resultados.dias_laborados + " dias, es igual a: " + resultados.total_liquidacion;
-    return {
-        pintar_cesantias: pintar_cesantias,
-        pintar_intereses_cesantias: pintar_intereses_cesantias,
-        pintar_prima_de_servicios: pintar_prima_de_servicios,
-        pintar_vacaciones: pintar_dias_laborados,
-        pintar_total_liquidacion: pintar_total_liquidacion,
-        pintar_total_referencias: pintar_total_referencias,
-    }
+    document.getElementById('resultado').innerHTML = "$ " + resultados.cesantias.toLocaleString('nl');
+    document.getElementById('resultado2').innerHTML = "$ " + resultados.intereses_cesantias.toLocaleString('nl');
+    document.getElementById('resultado3').innerHTML =  "$ " + resultados.prima_de_servicios.toLocaleString('nl');
+    document.getElementById('resultado4').innerHTML =  resultados.dias_laborados.toLocaleString('nl');
+    document.getElementById('resultado5').innerHTML = "$ " + resultados.total_liquidacion.toLocaleString('nl');
+    /* document.getElementById('resultado6').innerHTML = "La liquidación del trabajador " + data.nombre + " con un sueldo de: " + data.salario_base +
+    " que laboro: " + resultados.dias_laborados + " dias, es igual a: " + resultados.total_liquidacion; */
    
 }
 
