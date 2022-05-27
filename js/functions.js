@@ -61,7 +61,7 @@ function pintar(resultados, data){
     document.getElementById('div_dias_laborados').innerHTML =  resultados.dias_laborados.toLocaleString('nl');
     document.getElementById('div_total_liquidacion').innerHTML = "$ " + resultados.total_liquidacion.toLocaleString('nl');
     document.getElementById('resultado6').innerHTML = "La liquidación del trabajador " + data.nombre + " con un sueldo de $ " + data.salario_base +
-    " que laboro " + resultados.dias_laborados + " días, corresponde $ " + resultados.total_liquidacion;
+    " que laboró " + resultados.dias_laborados + " días, corresponde $ " + resultados.total_liquidacion;
    
 }
 
