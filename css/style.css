@@ -173,7 +173,7 @@ input:focus::placeholder {
 
 #resultado6 {
     display: flex;
-    width: 450px;
+    width: 350px;
     height: auto;
     text-align: center;
     font-size: 15px;
