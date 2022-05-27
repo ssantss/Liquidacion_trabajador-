@@ -125,7 +125,7 @@
 .Resultado_{
     font-family: 'Nunito', sans-serif;
     font-size: 25px;
-    text-align: end;
+    text-align: center;
     width: 220px;
     height: 40px;
     font-size: 20px;
@@ -173,14 +173,13 @@ input:focus::placeholder {
 
 #resultado6 {
     display: flex;
-    width: auto;
+    width: 450px;
     height: auto;
     text-align: center;
     font-size: 15px;
     margin-top: 30px;
     color: #c0392b;
 }
-
 
 
 

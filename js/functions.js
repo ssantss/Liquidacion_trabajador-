@@ -60,8 +60,8 @@ function pintar(resultados, data){
     document.getElementById('div_prima_servicios').innerHTML =  "$ " + resultados.prima_de_servicios.toLocaleString('nl');
     document.getElementById('div_dias_laborados').innerHTML =  resultados.dias_laborados.toLocaleString('nl');
     document.getElementById('div_total_liquidacion').innerHTML = "$ " + resultados.total_liquidacion.toLocaleString('nl');
-    /* document.getElementById('resultado6').innerHTML = "La liquidación del trabajador " + data.nombre + " con un sueldo de: " + data.salario_base +
-    " que laboro: " + resultados.dias_laborados + " dias, es igual a: " + resultados.total_liquidacion; */
+    document.getElementById('resultado6').innerHTML = "La liquidación del trabajador " + data.nombre + " con un sueldo de $ " + data.salario_base +
+    " que laboro " + resultados.dias_laborados + " días, corresponde $ " + resultados.total_liquidacion;
    
 }
 
