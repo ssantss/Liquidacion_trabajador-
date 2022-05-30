@@ -17,6 +17,7 @@ function serialize_form(form) {
 /* Cuando hay un evento submit la funcion ejecuta todos los siguientes parametros  */
 function submit_event (e) {
     e.preventDefault()
+    console.log('hola como estas')
     const data = serialize_form(this);
     const dias_laborados = calcular_dias(data);
     const resultados = calcular(data.salario_base, dias_laborados)  
@@ -60,8 +61,8 @@ function pintar(resultados, data){
     document.getElementById('div_prima_servicios').innerHTML =  "$ " + resultados.prima_de_servicios.toLocaleString('nl');
     document.getElementById('div_dias_laborados').innerHTML =  resultados.dias_laborados.toLocaleString('nl');
     document.getElementById('div_total_liquidacion').innerHTML = "$ " + resultados.total_liquidacion.toLocaleString('nl');
-    document.getElementById('resultado6').innerHTML = "La liquidación del trabajador " + data.nombre + " con un sueldo de $ " + data.salario_base +
-    " que laboró " + resultados.dias_laborados + " días, corresponde $ " + resultados.total_liquidacion;
+    document.getElementById('resultado6').innerHTML = "La liquidación del trabajador " + data.nombre + " con un sueldo de $ " + parseInt(data.salario_base).toLocaleString('nl') +
+    " que laboró " + resultados.dias_laborados + " días, corresponde $ " + resultados.total_liquidacion.toLocaleString('nl');
    
 }
 
